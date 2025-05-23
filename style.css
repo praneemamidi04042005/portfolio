@@ -8,12 +8,31 @@
     */
 body{
     background-color: #f6f6f6;
+    margin: 0;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.4;
+}
+h1,h2,h3{
+font-family: 'Caveat',cursive;
+font-weight: 400;
+margin: 0;
+}
+h1{
+    font-size: 7rem;
+}
+h2{
+    font-size: 3.6rem;
+}
+h3{
+    font-size: 2.4rem;
 }
 a{
     color:#3c8453
 }
 html{
     box-sizing: border-box;
+    font-size: 62.5%;/* set default to 10px; */
 }
 html,body{
     height: 100%;
@@ -25,8 +44,9 @@ a:hover{
     color: #bcaa96;
 }
 .content-wrapper {
-    background-color: rgba(255,22355,255,0.9);
-    background: no-repeat;
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 900px;
 }
 .socials{
     list-style-type: none;
@@ -37,24 +57,32 @@ a:hover{
 }
 /* Index */
 .home{
-   background: url(placeholder-images/bg-coffee-shop.jpg) no-repeat;
+   background: url(placeholder-images/bg-home-office-studio.jpg) no-repeat;
    background-size: cover;
    display: flex;
    flex-direction: column;
 }
 .home .content-wrapper{
-    margin: 0 auto;
-    padding: 30px;
     flex: 1 0 auto;
 }
-.home .content-bg{
+.content-bg{
     padding: 30px;
     background: rgba(255,255,255,0.9);
+}
+@media screen and (max-width:580px) {
+    .home .content-wrapper{
+        padding: 10px;
+    }
+    .content-bg{
+        padding: 20px;
+    }
 }
 /* Resume */
 .resume header::before{
     background: url(placeholder-images/bg-home-office-studio.jpg) center/cover;
     content:"";
+    background-size: cover;
+    content: "";
     display:block;
     height: 375px;
 }
@@ -62,31 +90,59 @@ a:hover{
     margin-bottom: 50px;
 }
 .resume-section h2{
-    border-bottom: 2px dashed #d3d4d6;
+    border-bottom: 2px dashed lightgray;
 }
-.btn download-link{
+.download-link{
     position: fixed;
     top: 5px;
     left: 5px;
+    font-size: 1.5rem;
 }
-
-/* Profile */
-/* Projects */
-/* Work Experience */
-/* Education */
-/* Footer */
+@media screen and (max-width:1200px){
+    .download-link{
+        position: absolute;
+    }
+}
+@media screen and (max-width:580px) {
+    .resume header::before{
+        height: 200px;
+    }
+    h1{
+        font-size: 4.5rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+}
+.education-item{
+    margin: 30px 0;
+}
+.education-item p{
+    margin: 0;
+}
 footer{
 background-color: #222;
 color: #D3D4D6;
-display: flex;
-justify-content: space-between;
-padding-inline: 20px;
+
 }
 footer a{
     color: #bcaa96;
 }
 footer a:hover{
     color: #3c8453;
+}
+@media screen and (min-width:860px){
+    footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width:859px){
+    footer{
+        text-align: center;
+        padding: 10px;
+    }
 }
 .socials{
     list-style-type: none;
@@ -100,5 +156,5 @@ width: 32px;
     margin-left: 10px;
 }
 .socials img:hover{
-    opacity: 50%;
+    opacity: 0.5;
 }
